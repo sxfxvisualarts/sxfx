@@ -1,0 +1,319 @@
+/* ============================================
+   SXFX PLUGIN PAGE STYLES
+   Note: style.css is loaded from HTML
+   ============================================ */
+
+/* Plugin Page Container */
+.plugin-page {
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Top Bar: Back + Title */
+.plugin-topbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-spacer {
+    width: 150px;
+    /* Same as back-btn to balance */
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.back-btn:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: white;
+}
+
+/* Plugin Hero */
+.plugin-hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 1.5rem;
+}
+
+.plugin-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    margin-bottom: 1rem;
+}
+
+.plugin-icon {
+    display: none;
+}
+
+.plugin-title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.plugin-title-group h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin: 0;
+}
+
+.plugin-category {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Video Section */
+.video-section {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    background: var(--bg-secondary);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+/* Content Layout: Images + Description */
+.plugin-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Image Gallery (Left Side) */
+.plugin-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gallery-image {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    background: var(--bg-secondary);
+    aspect-ratio: 16/10;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Description (Right Side) */
+.plugin-description {
+    position: sticky;
+    top: 120px;
+}
+
+.plugin-description h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.plugin-description .desc-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Features List */
+.features-list {
+    margin-bottom: 2.5rem;
+}
+
+.features-list h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-cyan);
+}
+
+.features-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.features-list li::before {
+    content: '✦';
+    color: var(--accent-purple);
+}
+
+/* Technical Specs */
+.tech-specs {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.tech-specs h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.spec-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.spec-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* CTA Button */
+.plugin-cta {
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .video-section {
+        width: 90%;
+    }
+
+    .plugin-content {
+        grid-template-columns: 1fr;
+    }
+
+    .plugin-gallery {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .gallery-image {
+        min-width: 250px;
+    }
+
+    .plugin-description {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .plugin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+}
