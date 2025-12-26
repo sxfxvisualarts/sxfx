@@ -137,6 +137,52 @@
     font-size: 1.2rem;
 }
 
+/* Sound Toggle Button */
+.sound-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 20;
+    opacity: 0.7;
+}
+
+.sound-toggle:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.85);
+    border-color: var(--accent-cyan);
+    transform: scale(1.1);
+}
+
+.sound-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+    transition: all 0.3s ease;
+}
+
+.sound-toggle:hover svg {
+    fill: var(--accent-cyan);
+}
+
+.sound-toggle.unmuted {
+    border-color: var(--accent-green);
+}
+
+.sound-toggle.unmuted svg {
+    fill: var(--accent-green);
+}
+
 /* Content Layout: Images + Description */
 .plugin-content {
     max-width: 1400px;
