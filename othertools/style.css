@@ -120,8 +120,8 @@
 }
 
 .tool-details.active {
-    max-height: 500px;
-    /* Approximate max height */
+    max-height: 600px;
+    overflow-y: auto;
     border-top: 1px solid var(--glass-border);
 }
 
