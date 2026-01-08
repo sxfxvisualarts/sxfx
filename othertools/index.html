@@ -59,10 +59,53 @@
                 </div>
                 <div class="tool-details">
                     <div class="details-content">
-                        <h4>Map entire banks in seconds</h4>
-                        <p>The window stays open, letting you map controls one after another.</p>
+                        <h4>🎹 SXFX MIDI Remapper - User Guide (v1.6.6)</h4>
+                        <p>Turn your standard MIDI controller into a productivity powerhouse. Create layers, advanced
+                            combinations, and smart conditional logic to control your DAW exactly how you want.</p>
+                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
 
-                        <h5>How to use:</h5>
+                        <h5>🚀 Core Concepts</h5>
+                        <h6>What does it do?</h6>
+                        <p>It sits between your MIDI controller and your DAW/Software. It intercepts messages, processes
+                            them according to your Rules, and sends them out. This allows you to:</p>
+                        <ol>
+                            <li><strong>Shift Layers:</strong> Use one button to change the function of your
+                                faders/knobs.</li>
+                            <li><strong>Clean Up:</strong> Filter out unwanted noise or unused controls.</li>
+                            <li><strong>Convert:</strong> Turn infinite encoders into standard absolute faders.</li>
+                        </ol>
+                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+
+                        <h5>🎛️ Translation Modes</h5>
+                        <p>The core of v1.6.6 is the <strong>Live Mode Selector</strong>. Choose how the engine behaves
+                            in real-time:</p>
+                        <h6>1. Mix Mode (Recommended)</h6>
+                        <ul>
+                            <li><strong>Behavior:</strong> Your Rules apply. Your piano/free keys <strong>PASS</strong>
+                                through. Shift buttons are <strong>SILENCED</strong>.</li>
+                            <li><strong>Best for:</strong> Playing instruments while using macro controls.</li>
+                        </ul>
+                        <h6>2. Rules Only (Strict)</h6>
+                        <ul>
+                            <li><strong>Behavior:</strong> <strong>ONLY</strong> your Rules pass through. Everything
+                                else is blocked (Muted).</li>
+                            <li><strong>Best for:</strong> Critical live performances where you need to prevent
+                                accidental triggering of unmapped notes.</li>
+                        </ul>
+                        <h6>3. Transparent (Bypass)</h6>
+                        <ul>
+                            <li><strong>Behavior:</strong> The engine is bypassed. All MIDI data passes through raw.
+                            </li>
+                            <li><strong>Best for:</strong> Debugging or using the controller natively for a while.</li>
+                        </ul>
+                        <p><em><strong>Note:</strong> You can switch modes instantly while performing without stopping
+                                the engine.</em></p>
+                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+
+                        <h5>🧠 MIDI Learn</h5>
+                        <h6>Rapid Learning</h6>
+                        <p>Map entire banks in seconds. The window stays open, letting you map controls one after
+                            another.</p>
                         <ol>
                             <li>Click <strong>LEARN</strong>.</li>
                             <li>Choose Type:
@@ -75,21 +118,55 @@
                             <li>Click <strong>DONE</strong> when finished.</li>
                         </ol>
 
-                        <h5>Rule Types</h5>
+                        <h6>Rule Types</h6>
+                        <p><strong>1. Simple Mapping (Control -> Action)</strong></p>
                         <ul>
-                            <li><strong>Simple Mapping:</strong> Direct control (e.g., Fader 1 controls Volume).</li>
-                            <li><strong>Combined Mapping:</strong> Shift + Control logic (e.g., Holding "Button 1" turns
-                                "Fader 1" into Reverb Send).</li>
+                            <li><em>Example:</em> Fader 1 controls Volume.</li>
+                            <li><strong>Process:</strong> Select "Simple" -> Move Fader. Done.</li>
+                        </ul>
+                        <p><strong>2. Combined Mapping (Shift + Control -> Action)</strong></p>
+                        <ul>
+                            <li><em>Example:</em> Holding "Button 1" turns "Fader 1" into Reverb Send.</li>
+                            <li><strong>Process:</strong>
+                                <ol type="a">
+                                    <li>Select "Combined".</li>
+                                    <li>Step 1: Press your Modifier (Shift) button.</li>
+                                    <li>Step 2: Move the control you want to map.</li>
+                                </ol>
+                            </li>
                         </ul>
 
-                        <h5>Efficient Workflow</h5>
+                        <h6>Advanced Learn Options:</h6>
                         <ul>
-                            <li><strong>Advanced Learn:</strong> Convert 360/Infinite encoders into absolute faders.
+                            <li><strong>Create as:</strong>
+                                <ul>
+                                    <li><strong>Pass:</strong> Copies the value as-is.</li>
+                                    <li><strong>Fader:</strong> Converts 360/Infinite encoders into absolute faders
+                                        (0-127).</li>
+                                </ul>
                             </li>
-                            <li><strong>Smart Silence:</strong> Intelligent muting of Shift buttons to prevent DAW
-                                triggers while switching layers.</li>
-                            <li><strong>Panic:</strong> Automatically sends "All Notes Off" when stopping engine.</li>
+                            <li><strong>Output ID:</strong>
+                                <ul>
+                                    <li><strong>Use Control (Input):</strong> Output matches the ID of the moved
+                                        control.</li>
+                                    <li><strong>Use Shift (Modifier):</strong> Output matches the ID of the Shift button
+                                        (great for channel-based layers).</li>
+                                </ul>
+                            </li>
                         </ul>
+                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+
+                        <h5>🛠️ Efficient Workflow</h5>
+                        <ul>
+                            <li><strong>Double Click:</strong> Edit any rule.</li>
+                            <li><strong>Delete Key:</strong> Remove selected rules.</li>
+                            <li><strong>Right Click:</strong> Access duplicate and advanced options.</li>
+                            <li><strong>Smart Silence:</strong> In "Mix Mode", SXFX intelligently mutes your Shift
+                                buttons so they don't trigger notes in your DAW while you're switching layers.</li>
+                            <li><strong>Panic:</strong> Stopping the engine automatically sends "All Notes Off" to
+                                prevent stuck notes.</li>
+                        </ul>
+                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
                     </div>
                 </div>
             </article>
