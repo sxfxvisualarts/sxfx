@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SXFX Other Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../logo.png" alt="SXFX" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#plugins" class="nav-link">Plugins</a></li>
+                <li><a href="#" class="nav-link active">Other Tools</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="tools-page">
+        <div class="tools-header">
+            <h1>Other <span class="gradient-text">Tools</span></h1>
+            <p>Useful little utilities and experimental projects.</p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Tool 1 Template -->
+            <article class="tool-card">
+                <img src="imgs/tool1.png" alt="Tool 1" class="tool-image"
+                    onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect fill=\'%23333\' width=\'300\' height=\'200\'/%3E%3Ctext fill=\'%23666\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\'%3ETool Preview%3C/text%3E%3C/svg%3E'">
+                <div class="tool-content">
+                    <h3 class="tool-title">Example Tool 1</h3>
+                    <p class="tool-brief">A small utility that helps you do something amazing with just one click.</p>
+                    <div class="tool-actions">
+                        <a href="#" class="btn-download">Download</a>
+                        <button class="btn-info">+ Info</button>
+                    </div>
+                </div>
+                <div class="tool-details">
+                    <div class="details-content">
+                        <p><strong>Version:</strong> 1.0.0</p>
+                        <p><strong>OS:</strong> Windows / Mac</p>
+                        <p>This is a more detailed description of the tool. It explains how it works, what it does, and
+                            why you should use it. You can put as much text here as needed.</p>
+                        <ul>
+                            <li>Feature A</li>
+                            <li>Feature B</li>
+                            <li>Feature C</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tool 2 Template -->
+            <article class="tool-card">
+                <img src="imgs/tool2.png" alt="Tool 2" class="tool-image"
+                    onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'%3E%3Crect fill=\'%23333\' width=\'300\' height=\'200\'/%3E%3Ctext fill=\'%23666\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\'%3ETool Preview%3C/text%3E%3C/svg%3E'">
+                <div class="tool-content">
+                    <h3 class="tool-title">Example Tool 2</h3>
+                    <p class="tool-brief">Another great utility for your daily workflow.</p>
+                    <div class="tool-actions">
+                        <a href="#" class="btn-download">Download</a>
+                        <button class="btn-info">+ Info</button>
+                    </div>
+                </div>
+                <div class="tool-details">
+                    <div class="details-content">
+                        <p><strong>Version:</strong> 2.1.0</p>
+                        <p><strong>OS:</strong> Windows</p>
+                        <p>Detailed info about the second tool goes here.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../logo.png" alt="SXFX" class="logo-img">
+            </div>
+            <p class="footer-text">© <span id="current-year">2024</span> SXFX Plugins. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
