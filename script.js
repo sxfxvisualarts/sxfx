@@ -390,7 +390,7 @@ class FloatingGallery {
         this.cards = document.querySelectorAll('.floating-card');
         this.images = [];
         this.currentAssignments = [null, null, null]; // Which image index is assigned to each card
-        this.pluginFolders = ['beatshape', 'substance', 'dustcloud', 'parallaxis', 'fractraveler'];
+        this.pluginFolders = ['beatshape', 'paintflow', 'dustcloud', 'parallaxis', 'fractraveler'];
 
         this.init();
     }
