@@ -235,18 +235,24 @@
 .gallery-image.is-expanded {
     position: absolute;
     top: 0;
-    left: 2rem;
-    /* Match container padding */
+    left: calc(300px + 6rem);
+    /* 300px gallery + 2rem padding + 4rem gap */
     right: 2rem;
-    /* Match container padding */
     height: 100%;
     z-index: 100;
-    aspect-ratio: auto;
     background: var(--bg-primary);
     /* Mask text */
     border-radius: 20px;
     box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9);
     border: 2px solid var(--accent-purple);
+}
+
+@media (max-width: 1024px) {
+    .gallery-image.is-expanded {
+        left: 2rem;
+        right: 2rem;
+        height: 100%;
+    }
 }
 
 .gallery-image.is-expanded img {
