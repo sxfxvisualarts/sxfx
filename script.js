@@ -569,38 +569,59 @@ class FloatingGallery {
 }
 
 // ============================================
-// IMAGE EXPANDER
+// IMAGE LIGHTBOX
 // ============================================
-class ImageExpander {
+class ImageLightbox {
     constructor() {
-        this.galleryImages = document.querySelectorAll('.gallery-image');
-        this.init();
+        this.galleryImages = document.querySelectorAll('.gallery-image img');
+        this.overlay = null;
+        this.lightboxImg = null;
+
+        if (this.galleryImages.length > 0) {
+            this.init();
+        }
     }
 
     init() {
-        this.galleryImages.forEach(image => {
-            image.addEventListener('click', () => this.toggleExpand(image));
+        // Create lightbox elements
+        this.createLightbox();
+
+        // Add listeners to gallery images
+        this.galleryImages.forEach(img => {
+            img.parentElement.addEventListener('click', () => this.open(img.src));
         });
+
+        // Close on overlay click
+        this.overlay.addEventListener('click', () => this.close());
+
+        // Prevent closing when clicking the image itself
+        this.lightboxImg.addEventListener('click', (e) => e.stopPropagation());
     }
 
-    toggleExpand(image) {
-        const contentSection = document.querySelector('.plugin-content');
-        const currentlyExpanded = document.querySelector('.gallery-image.is-expanded');
+    createLightbox() {
+        this.overlay = document.createElement('div');
+        this.overlay.className = 'lightbox-overlay';
 
-        if (currentlyExpanded && currentlyExpanded !== image) {
-            currentlyExpanded.classList.remove('is-expanded');
-        }
+        const content = document.createElement('div');
+        content.className = 'lightbox-content';
 
-        const isExpanding = !image.classList.contains('is-expanded');
-        image.classList.toggle('is-expanded');
+        this.lightboxImg = document.createElement('img');
+        this.lightboxImg.className = 'lightbox-image';
 
-        // Smooth scroll to top of section if expanding
-        if (isExpanding && contentSection) {
-            const yOffset = -120; // Account for navbar
-            const y = contentSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        content.appendChild(this.lightboxImg);
+        this.overlay.appendChild(content);
+        document.body.appendChild(this.overlay);
+    }
 
-            window.scrollTo({ top: y, behavior: 'smooth' });
-        }
+    open(src) {
+        this.lightboxImg.src = src;
+        this.overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    close() {
+        this.overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
     }
 }
 
@@ -635,8 +656,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Floating Image Gallery
     new FloatingGallery();
 
-    // Image Expander
-    new ImageExpander();
+    // Image Lightbox
+    new ImageLightbox();
 
     // Auto-update copyright year
     const yearSpan = document.getElementById('current-year');
