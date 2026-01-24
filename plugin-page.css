@@ -192,6 +192,8 @@
     grid-template-columns: 300px 1fr;
     gap: 4rem;
     align-items: start;
+    position: relative;
+    /* Added for absolute expansion */
 }
 
 /* Image Gallery (Left Side) */
@@ -217,26 +219,6 @@
         grid-row: 1 / span 20;
         /* Ensure description can span past all images */
     }
-
-    .gallery-image.is-expanded {
-        grid-column: 1 / -1;
-        z-index: 100;
-        aspect-ratio: auto;
-        width: 100%;
-        height: auto;
-        margin-bottom: 2rem;
-        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9);
-        border-color: var(--accent-purple);
-        transform: none !important;
-        /* Disable any floating/hover transforms */
-    }
-
-    .gallery-image.is-expanded img {
-        height: auto;
-        width: 100%;
-        object-fit: contain;
-        /* Better for full-width expansion */
-    }
 }
 
 .gallery-image {
@@ -248,6 +230,31 @@
     aspect-ratio: 16/10;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-image.is-expanded {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    /* Match container padding */
+    right: 2rem;
+    /* Match container padding */
+    height: 100%;
+    z-index: 100;
+    aspect-ratio: auto;
+    background: var(--bg-primary);
+    /* Mask text */
+    border-radius: 20px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--accent-purple);
+}
+
+.gallery-image.is-expanded img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    /* Let contain handle edges */
 }
 
 .gallery-image img {

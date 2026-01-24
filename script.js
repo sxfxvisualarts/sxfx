@@ -584,20 +584,22 @@ class ImageExpander {
     }
 
     toggleExpand(image) {
-        // Only one image expanded at a time
+        const contentSection = document.querySelector('.plugin-content');
         const currentlyExpanded = document.querySelector('.gallery-image.is-expanded');
 
         if (currentlyExpanded && currentlyExpanded !== image) {
             currentlyExpanded.classList.remove('is-expanded');
         }
 
+        const isExpanding = !image.classList.contains('is-expanded');
         image.classList.toggle('is-expanded');
 
-        // Smooth scroll to image if expanding
-        if (image.classList.contains('is-expanded')) {
-            setTimeout(() => {
-                image.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 300);
+        // Smooth scroll to top of section if expanding
+        if (isExpanding && contentSection) {
+            const yOffset = -120; // Account for navbar
+            const y = contentSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     }
 }
