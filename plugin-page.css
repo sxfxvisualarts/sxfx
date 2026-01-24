@@ -201,6 +201,30 @@
     gap: 1.5rem;
 }
 
+/* On desktop, use display: contents to let images participate in the main grid */
+@media (min-width: 1025px) {
+    .plugin-gallery {
+        display: contents;
+    }
+
+    .gallery-image {
+        grid-column: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .plugin-description {
+        grid-column: 2;
+        grid-row: 1 / span 20;
+        /* Ensure description can span past all images */
+    }
+
+    .gallery-image.is-expanded {
+        grid-column: 1 / -1;
+        z-index: 100;
+        aspect-ratio: auto;
+    }
+}
+
 .gallery-image {
     width: 100%;
     border-radius: 16px;
@@ -208,6 +232,8 @@
     overflow: hidden;
     background: var(--bg-secondary);
     aspect-ratio: 16/10;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
 }
 
 .gallery-image img {
@@ -219,6 +245,11 @@
 
 .gallery-image:hover img {
     transform: scale(1.05);
+}
+
+/* Disable hover effects when expanded */
+.gallery-image.is-expanded:hover img {
+    transform: scale(1);
 }
 
 .image-placeholder {

@@ -569,6 +569,40 @@ class FloatingGallery {
 }
 
 // ============================================
+// IMAGE EXPANDER
+// ============================================
+class ImageExpander {
+    constructor() {
+        this.galleryImages = document.querySelectorAll('.gallery-image');
+        this.init();
+    }
+
+    init() {
+        this.galleryImages.forEach(image => {
+            image.addEventListener('click', () => this.toggleExpand(image));
+        });
+    }
+
+    toggleExpand(image) {
+        // Only one image expanded at a time
+        const currentlyExpanded = document.querySelector('.gallery-image.is-expanded');
+
+        if (currentlyExpanded && currentlyExpanded !== image) {
+            currentlyExpanded.classList.remove('is-expanded');
+        }
+
+        image.classList.toggle('is-expanded');
+
+        // Smooth scroll to image if expanding
+        if (image.classList.contains('is-expanded')) {
+            setTimeout(() => {
+                image.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+    }
+}
+
+// ============================================
 // INITIALIZE EVERYTHING
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -598,6 +632,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Floating Image Gallery
     new FloatingGallery();
+
+    // Image Expander
+    new ImageExpander();
 
     // Auto-update copyright year
     const yearSpan = document.getElementById('current-year');
