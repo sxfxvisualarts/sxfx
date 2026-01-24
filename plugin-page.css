@@ -225,8 +225,17 @@
         width: 100%;
         height: auto;
         margin-bottom: 2rem;
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9);
         border-color: var(--accent-purple);
+        transform: none !important;
+        /* Disable any floating/hover transforms */
+    }
+
+    .gallery-image.is-expanded img {
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+        /* Better for full-width expansion */
     }
 }
 
