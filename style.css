@@ -1132,6 +1132,88 @@ body {
 .footer-tagline {
     color: var(--text-secondary);
     font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/* Fancy Footer Socials */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-social .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-primary);
+    transition: all var(--transition-spring);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.footer-social .social-link svg {
+    width: 24px;
+    height: 24px;
+    transition: transform var(--transition-spring);
+}
+
+.footer-social .social-link:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: white;
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.4),
+        0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.footer-social .social-link:hover svg {
+    transform: rotate(8deg);
+}
+
+/* Fancy Footer Background Glow */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(50px);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-social .social-link {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-social .social-link:hover {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    transform: translateY(-3px);
 }
 
 /* ============================================
