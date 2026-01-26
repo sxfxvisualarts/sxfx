@@ -44,10 +44,13 @@
 }
 
 .tool-image {
-    width: 100%;
+    display: block;
+    width: 60%;
+    margin: 1.5rem auto 0;
     aspect-ratio: 16/9;
     object-fit: cover;
     background: var(--bg-secondary);
+    border-radius: 12px;
 }
 
 .tool-content {
