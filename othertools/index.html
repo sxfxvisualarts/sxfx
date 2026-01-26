@@ -49,20 +49,22 @@
                     onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 24 24\'%3E%3Crect fill=\'%232a2a2a\' width=\'300\' height=\'200\'/%3E%3Ctext fill=\'%23666\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' font-family=\'sans-serif\'%3EMIDI REMAPPER%3C/text%3E%3C/svg%3E'">
                 <div class="tool-content">
                     <h3 class="tool-title">SXFX MIDI Remapper</h3>
-                    <p class="tool-brief">High-performance MIDI remapping utility. Map entire banks in seconds using
-                        Simple (1:1) or Combined (Shift logic) modes. Designed for speed and efficient workflow.</p>
+                    <p class="tool-brief">Turn your standard MIDI controller into a productivity powerhouse. Create
+                        layers,
+                        advanced combinations, and smart conditional logic to control your DAW exactly how you want.</p>
                     <div class="tool-actions">
                         <a href="https://drive.google.com/file/d/16heGVZoX0WzVCF8gjBPWyDsw_Nh7Mld_/view?usp=sharing"
                             target="_blank" rel="noopener noreferrer" class="btn-download">Download</a>
                         <button class="btn-info">+ Info</button>
                     </div>
                 </div>
+                <!-- Tool Details (Expanded Guide) -->
                 <div class="tool-details">
                     <div class="details-content">
-                        <h4>🎹 SXFX MIDI Remapper - User Guide (v1.6.6)</h4>
+                        <h4>🎹 SXFX MIDI Remapper - User Guide (v1.7.0)</h4>
                         <p>Turn your standard MIDI controller into a productivity powerhouse. Create layers, advanced
                             combinations, and smart conditional logic to control your DAW exactly how you want.</p>
-                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
 
                         <h5>🚀 Core Concepts</h5>
                         <h6>What does it do?</h6>
@@ -73,11 +75,31 @@
                                 faders/knobs.</li>
                             <li><strong>Clean Up:</strong> Filter out unwanted noise or unused controls.</li>
                             <li><strong>Convert:</strong> Turn infinite encoders into standard absolute faders.</li>
+                            <li><strong>Multi-Hardware Support:</strong> Connect multiple controllers simultaneously.
+                            </li>
                         </ol>
-                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+
+                        <h5>🏗️ Hardware Setup</h5>
+                        <h6>1. Multi-Input Selection</h6>
+                        <p>The <strong>MIDI IN</strong> section now features a <strong>"Select inputs..."</strong>
+                            button.</p>
+                        <ul>
+                            <li>Click it to choose one or more MIDI devices.</li>
+                            <li>Signals from all selected devices will be processed in parallel.</li>
+                        </ul>
+                        <h6>2. Exclusive Hardware Lock</h6>
+                        <p>Once you click <strong>GO!</strong>, SXFX MIDI Remapper takes <strong>exclusive
+                                control</strong> of the selected MIDI ports.</p>
+                        <ul>
+                            <li>This prevents other applications from interfering with the devices while the engine is
+                                running.</li>
+                            <li>To release the lock, simply click <strong>STOP</strong>.</li>
+                        </ul>
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
 
                         <h5>🎛️ Translation Modes</h5>
-                        <p>The core of v1.6.6 is the <strong>Live Mode Selector</strong>. Choose how the engine behaves
+                        <p>The core of v1.7.0 is the <strong>Live Mode Selector</strong>. Choose how the engine behaves
                             in real-time:</p>
                         <h6>1. Mix Mode (Recommended)</h6>
                         <ul>
@@ -100,7 +122,7 @@
                         </ul>
                         <p><em><strong>Note:</strong> You can switch modes instantly while performing without stopping
                                 the engine.</em></p>
-                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
 
                         <h5>🧠 MIDI Learn</h5>
                         <h6>Rapid Learning</h6>
@@ -154,7 +176,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
 
                         <h5>🛠️ Efficient Workflow</h5>
                         <ul>
@@ -166,7 +188,9 @@
                             <li><strong>Panic:</strong> Stopping the engine automatically sends "All Notes Off" to
                                 prevent stuck notes.</li>
                         </ul>
-                        <hr style="margin: 1rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--glass-border);">
+                        <p style="font-size: 0.8rem; opacity: 0.6; text-align: center;"><em>Documentation for v1.7.0 -
+                                Parallel Engine</em></p>
                     </div>
                 </div>
             </article>
