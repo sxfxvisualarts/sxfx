@@ -569,6 +569,45 @@ class FloatingGallery {
 }
 
 // ============================================
+// MOBILE HAMBURGER MENU
+// ============================================
+class HamburgerMenu {
+    constructor() {
+        this.hamburger = document.querySelector('.hamburger');
+        this.navLinks = document.querySelector('.nav-links');
+        this.navItems = document.querySelectorAll('.nav-link');
+
+        if (this.hamburger && this.navLinks) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Toggle menu when hamburger is clicked
+        this.hamburger.addEventListener('click', () => {
+            this.hamburger.classList.toggle('active');
+            this.navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        this.navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                this.hamburger.classList.remove('active');
+                this.navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container') && this.navLinks.classList.contains('active')) {
+                this.hamburger.classList.remove('active');
+                this.navLinks.classList.remove('active');
+            }
+        });
+    }
+}
+
+// ============================================
 // IMAGE LIGHTBOX
 // ============================================
 class ImageLightbox {
@@ -649,6 +688,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar
     new NavbarScroll();
+
+    // Mobile Hamburger Menu
+    new HamburgerMenu();
 
     // Magnetic Buttons
     new MagneticButtons();
