@@ -20,9 +20,9 @@
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -45,11 +45,25 @@
 
 .tool-image {
     display: block;
-    width: 60%;
+    width: 85%;
+    max-width: 380px;
     height: auto;
     margin: 1.5rem auto 0;
     background: var(--bg-secondary);
     border-radius: 12px;
+    object-fit: contain;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    .tool-image {
+        width: 90%;
+    }
 }
 
 .tool-content {
