@@ -12,6 +12,28 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- SXFX Private Cloudflare Analytics -->
+    <script>
+        (function() {
+            try {
+                var payload = JSON.stringify({
+                    page: window.location.pathname || '/othertools/',
+                    referrer: document.referrer || ''
+                });
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon('https://sxfx-sales-graph.sxfx-ventas.workers.dev/api/analytics/track', payload);
+                } else {
+                    fetch('https://sxfx-sales-graph.sxfx-ventas.workers.dev/api/analytics/track', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: payload,
+                        keepalive: true
+                    }).catch(function() {});
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body>
